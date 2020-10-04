@@ -8,4 +8,4 @@ else
 fi
 echo "build [${problem}]..."
 
-g++ -o solution ${problem} -std=c++11
+g++ -o solution ${problem} -g -Wall -std=c++11
