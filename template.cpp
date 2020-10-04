@@ -2,14 +2,14 @@
 
 class Solution {
 public:
-	void Demo() {
-		cout << "demo" << endl;
+	string Demo() {
+		return "demo";
 	}
 };
 
 int main(int argc, char* argv[]) {
 	Solution solution;
-	solution.Demo();
+	cout << solution.Demo() << endl;
 	
 	return 0;
 }
