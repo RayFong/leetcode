@@ -2,7 +2,7 @@
 
 problem=''
 if [[ $# != 1 ]]; then
-	problem=`ls  -lS --time-style=+%D *.cpp | head -n 1 | awk '{print $7}'`
+	problem=`ls  -lt *.cpp | head -n 1 | awk '{print $9}'`
 else
 	problem="problem_${1}.cpp"
 fi
