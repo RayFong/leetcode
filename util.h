@@ -56,3 +56,60 @@ ListNode* makeLinkList(vector<int> vals) {
 }
 
 // ======================================
+
+
+// ====================== 树相关 ======================
+
+struct TreeNode {
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
+};
+
+int countTreeHeight(TreeNode* root) {
+	if (root == nullptr) {
+		return 0;
+	}
+
+	return max(countTreeHeight(root->left), countTreeHeight(root->right)) + 1;
+}
+
+int countTreeNodeNum(TreeNode* root) {
+	if (root == nullptr) {
+		return 0;
+	}
+
+	return countTreeNodeNum(root->left) + countTreeNodeNum(root->right) + 1;
+}
+
+vector<TreeNode*> flatTreeNode(TreeNode* root) {
+	vector<TreeNode*> res;
+	res.push_back(root);
+	size_t s = 0;
+	while(s < res.size()) {
+		size_t e = res.size();
+		while(s < e) {
+			if (res[s] == nullptr) continue;
+			res.push_back(res[s]->left);
+			res.push_back(res[s]->right);
+			s++;
+		}
+	}
+	return res;
+}
+
+void printTree(TreeNode* root) {
+	auto nodes = flatTreeNode(root);
+	cout << "[";
+	for (auto node : nodes) {
+		if (node == nullptr) {
+			cout << "null, ";
+		} else {
+			cout << node->val << ", ";
+		}
+	}
+	cout << "]";
+}
+
+// ====================================================
