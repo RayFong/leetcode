@@ -11,6 +11,36 @@
 using namespace std;
 
 template<class T>
+void print(T t) {
+	std::cout << t;
+}
+
+template<typename KeyType, typename ValueType>
+void print(std::pair<KeyType, ValueType> kv)
+{
+	print(kv.first);
+	print("=");
+	print(kv.second);
+}
+
+template<typename T, typename AllocT, template<typename, typename...> typename SequenceT>
+void print(SequenceT<T, AllocT> seq)
+{
+	print("{");
+	for (auto iter = std::begin(seq); iter != std::end(seq); iter = std::next(iter)) {
+		print(*iter);
+		print(", ");
+	}
+	print("\b\b}");
+}
+
+template<typename T>
+void println(T t) {
+	print(t);
+	std::cout << std::endl;
+}
+
+template<class T>
 void printVector(vector<T> v) {
     cout << "[";
 	for (const auto& i : v) {
