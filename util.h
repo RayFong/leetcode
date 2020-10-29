@@ -15,6 +15,10 @@ void print(T t) {
 	std::cout << t;
 }
 
+void print(string t) {
+	std::cout << t;
+}
+
 template<typename KeyType, typename ValueType>
 void print(std::pair<KeyType, ValueType> kv)
 {

@@ -9,7 +9,8 @@ public:
 
 int main(int argc, char* argv[]) {
 	Solution solution;
-	cout << solution.Demo() << endl;
+	auto res = solution.Demo();
+	println(res);
 	
 	return 0;
 }
