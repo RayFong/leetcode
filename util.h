@@ -44,15 +44,6 @@ void println(T t) {
 	std::cout << std::endl;
 }
 
-template<class T>
-void printVector(vector<T> v) {
-    cout << "[";
-	for (const auto& i : v) {
-        cout << i << ", ";
-    }   
-    cout << "]" << endl;
-}
-
 // ============  链表相关 =============
 
 struct ListNode {
@@ -63,12 +54,15 @@ struct ListNode {
       ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-void printList(ListNode* head) {
+void print(ListNode* head) {
     if (head == nullptr) {
         std::cout << "list is null";
-    }   
+    } else {
+		std::cout << head->val;
+		head = head->next;
+	}   
     while(head != nullptr) {
-        std::cout << head->val << " -> ";
+        std::cout << " -> " << head->val;
         head = head->next;
     }   
     std::cout << std::endl;
