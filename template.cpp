@@ -9,8 +9,10 @@ public:
 
 int main(int argc, char* argv[]) {
 	Solution solution;
-	auto res = solution.Demo();
-	println(res);
-	
+	{
+		auto res = solution.Demo();
+		println(res);
+	}
+
 	return 0;
 }
