@@ -31,11 +31,16 @@ template<typename T, typename AllocT, template<typename, typename...> typename S
 void print(SequenceT<T, AllocT> seq)
 {
 	print("{");
+	int count = 0;
 	for (auto iter = std::begin(seq); iter != std::end(seq); iter = std::next(iter)) {
+		if (count > 0) {
+			print(", ");
+		}
 		print(*iter);
-		print(", ");
+		count++;
 	}
-	print("\b\b}");
+	print("}");
+	//print("\b\b}");
 }
 
 template<typename T>
