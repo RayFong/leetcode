@@ -59,7 +59,7 @@ struct ListNode {
       ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-void print(ListNode* head) {
+void println(ListNode* head) {
     if (head == nullptr) {
         std::cout << "list is null";
     } else {
@@ -73,7 +73,7 @@ void print(ListNode* head) {
     std::cout << std::endl;
 }
 
-ListNode* makeLinkList(vector<int> vals) {
+ListNode* makeList(vector<int> vals) {
     ListNode *head = nullptr;
     ListNode *tail = nullptr;
     for(auto v : vals) {
