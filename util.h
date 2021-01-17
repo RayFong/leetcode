@@ -19,6 +19,11 @@ void print(string t) {
 	std::cout << t;
 }
 
+void print(bool t) {
+	string v = t ? "true" : "false";
+	std::cout << v;
+}
+
 template<typename KeyType, typename ValueType>
 void print(std::pair<KeyType, ValueType> kv)
 {
